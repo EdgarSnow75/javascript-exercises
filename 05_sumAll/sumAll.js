@@ -1,5 +1,26 @@
-const sumAll = function() {
+// Set a sum variable to zero
+// Loop through using the first argument as counter variable and use the second variable as the conditional
+// On each iteration, add the current number to the total sum
 
+const sumAll = function (num1, num2) {
+  let sum = 0;
+  if (
+    num1 < 0 ||
+    num2 < 0 ||
+    !Number.isInteger(num1) ||
+    !Number.isInteger(num2)
+  )
+    return "ERROR";
+  if (num1 > num2) {
+    let num3 = num2;
+    num2 = num1;
+    num1 = num3;
+  }
+  for (let i = num1; i <= num2; i++) {
+    sum += i;
+  }
+
+  return sum;
 };
 
 // Do not edit below this line
